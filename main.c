@@ -1,11 +1,3 @@
-#ifdef _WIN32
-    #include <windows.h>
-
-    #define LOAD_LIB LoadLibrary
-    #define GET_FUNC GetProcAddress
-    #define LIB_CAST (HINSTANCE)
-    #define FREE_LIBRARY FreeLibrary
-#else
 #ifdef __linux__
     #include <dlfcn.h>
 
@@ -13,7 +5,6 @@
     #define GET_FUNC dlsym
     #define LIB_CAST
     #define FREE_LIBRARY dlclose
-#endif
 #endif
 
 #include <stdio.h>
@@ -31,7 +22,7 @@ void* load_lib(const char* const lib_name){
 
 int main()
 {
-    //размерности матрицы и массива
+    //пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     int size_arr = 12;
     int length1 = 4;
     int length2 = 6;
